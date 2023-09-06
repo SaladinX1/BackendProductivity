@@ -3,13 +3,14 @@ const mysql = require('mysql2');
 require('dotenv').config(); 
 
 
+console.log(process.env.DB,process.env.HOST,process.env.ROOT,process.env.DBPASS, process.env.DBPORT)
+
 const db = mysql.createConnection({
     host:process.env.HOST,
     database: process.env.DB,
     user: process.env.ROOT, 
     password: process.env.DBPASS,
-    port: process.env.PORT
-   
+    port: process.env.DBPORT
 });
 
  function initialize() {
@@ -19,8 +20,6 @@ const db = mysql.createConnection({
     console.log("Connected");
     });
 
-    db.query("CREATE DATABASE IF NOT EXISTS Productivity;", function (err, result) {
-               if (err) throw err;        
 
                 db.query(`CREATE TABLE IF NOT EXISTS Users
                 (id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
@@ -70,9 +69,9 @@ const db = mysql.createConnection({
                      if (err) throw err;
                    })
 
-             }); 
+    
 
-             db.query("USE Productivity", function(err, result) {
+             db.query("USE bwxkmkzh3yqtqyuhytic", function(err, result) {
                 if (err) throw err;
             })
             
