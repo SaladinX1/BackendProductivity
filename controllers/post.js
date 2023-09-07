@@ -10,7 +10,7 @@ exports.addPost = (req, res) => {
     const { title, message } = req.body; 
     
   
-    const picture = `${req.protocol}://${req.get('host')}/images/${req.file.filename}`;
+    const picture = `$https://backend-productivity.onrender.com/images/${req.file.filename}`;
 
 
     const addScan = `INSERT INTO Post (title, picture, message, user_id) VALUES (?, ?, ?, ?)`;
