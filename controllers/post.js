@@ -10,7 +10,7 @@ exports.addPost = (req, res) => {
     const { title, message } = req.body; 
     console.log('Protocol && host :', req.protocol, + "&&" + req.get('host'));
   
-    const picture = `${req.protocol}://${req.get('NaNapp-e41459b6-43e3-41c9-a993-49eb96d7f59a.cleverapps.io')}/images/${req.file.filename}`;
+    const picture = `/${req.file.filename}`;
 
     const addScan = `INSERT INTO Post (title, picture, message, user_id) VALUES (?, ?, ?, ?)`;
 
