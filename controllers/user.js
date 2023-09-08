@@ -154,12 +154,22 @@ exports.putUser = async (req, res, next) => {
              
                 const user = getUserResults[0];
 
-                db.query('DELETE FROM comment WHERE pseudo_user = ?', [user.pseudo], (err, result) => {
-                    if (err) {
-                        console.log(err);
-                        return res.status(400).json({ message: 'Mauvaise requête !' });
+                db.query('SELECT * FROM comment Where pseudo_user = ?', [user.pseudo], (err, result) => {
+                    if (!result) {
+                        return;
+                    } else {
+
+                        db.query('DELETE FROM comment WHERE pseudo_user = ?', [user.pseudo], (err, result) => {
+                            if (err) {
+                                console.log(err);
+                                return res.status(400).json({ message: 'Mauvaise requête !' });
+                            }
+                        });
+
                     }
-                });
+                })
+
+                
 
                 
             const updateValues = [
