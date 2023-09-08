@@ -10,8 +10,8 @@ exports.addPost = (req, res) => {
     const { title, message } = req.body; 
     console.log('Protocol && host :', req.protocol, + "&&" + req.get('host'));
   
-    const picture = `https://bwxkmkzh3yqtqyuhytic-mysql.services.clever-cloud.com/images/${req.file.filename}`;
-
+    const picture = `/images/${req.file.filename}`;
+    // https://backend-productivity.onrender.com
 
     const addScan = `INSERT INTO Post (title, picture, message, user_id) VALUES (?, ?, ?, ?)`;
 
