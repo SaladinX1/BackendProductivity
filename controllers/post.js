@@ -11,7 +11,7 @@ exports.addPost = (req, res) => {
     console.log('Protocol && host :', req.protocol, + "&&" + req.get('host'));
   
     const picture = `/${req.file.filename}`;
-
+   
     const addScan = `INSERT INTO Post (title, picture, message, user_id) VALUES (?, ?, ?, ?)`;
 
     db.query(addScan,[title, picture, message, user_id], (err, result) => {
