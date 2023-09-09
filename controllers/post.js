@@ -9,7 +9,7 @@ exports.addPost = (req, res) => {
 
     const { title, message } = req.body; 
   
-    const picture = `https://app-e41459b6-43e3-41c9-a993-49eb96d7f59a.cleverapps.io/${req.file.filename}`;
+   // const picture = `https://app-e41459b6-43e3-41c9-a993-49eb96d7f59a.cleverapps.io/${req.file.filename}`;
    
     const addScan = `INSERT INTO Post (title, picture, message, user_id) VALUES (?, ?, ?, ?)`;
 
