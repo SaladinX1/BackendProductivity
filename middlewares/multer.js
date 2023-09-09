@@ -8,7 +8,7 @@ const Mime_types = {
 
 const storage = multer.diskStorage({
     destination: (req, file, callback) => {
-        callback(null, '../images')
+        callback(null, 'https://app-e41459b6-43e3-41c9-a993-49eb96d7f59a.cleverapps.io/images')
     },
     filename: (req, file, callback) => {
         const nom = file.originalname.split(' ').join('_');
