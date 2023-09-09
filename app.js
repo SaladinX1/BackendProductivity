@@ -34,7 +34,7 @@ app.use(express.urlencoded({
 
 
 
- app.use('/images',express.static(path.join(__dirname, 'images')));
+ app.use('https://app-e41459b6-43e3-41c9-a993-49eb96d7f59a.cleverapps.io/images',express.static(path.join(__dirname, 'images')));
 
 
 app.use('/api', userRoutes);
